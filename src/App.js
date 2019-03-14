@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FilmScroller } from './FilmScroller';
+import { Header } from './Header';
+import CardContainer from './CardContainer';
 import './App.css';
 
 class App extends Component {
@@ -23,6 +25,8 @@ class App extends Component {
     const { films } = this.state
     return (
       <div className="App">
+        <Header />
+        <CardContainer />
         <FilmScroller films={films}/>
       </div>
     );
