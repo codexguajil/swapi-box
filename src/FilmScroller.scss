@@ -1,3 +1,37 @@
-h3 {
-    color: blueviolet;
+body {
+    background-color: hsl(0, 0%, 0%);
+    overflow: hidden;
+}
+
+#film {
+    // background-color: hsl(0, 0%, 0%);
+    color: rgb(216, 216, 22);
+    display: flex;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 3rem;
+    font-weight: 600px;
+    height: 800px;
+    justify-content: center;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 400px;
+    top: -100px;
+    width: 20%;
+}
+
+#crawl {
+    animation: crawl 60s linear;
+    // background-color: hsl(0, 0%, 0%);
+    position: relative;
+    top: -100px;
+    transform-origin: 50% 100%;
+}
+
+@keyframes crawl {
+    0% {top: 0%;
+        transform: rotateX(20deg) translateZ(0)
+    }
+    100% {top: -6000px;
+          transform: rotateX(25deg) translateZ(-2500px);
+    }
 }
