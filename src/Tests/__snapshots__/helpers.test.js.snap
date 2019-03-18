@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`helpers iterateHelper should return the correct array of objects based on params 1`] = `
+<iterateHelper
+  array={
+    Array [
+      Object {
+        "model": "v2",
+        "name": "ed",
+      },
+      Object {
+        "model": "sapien",
+        "name": "voks",
+      },
+      Object {
+        "model": "rainier",
+        "name": "thumper",
+      },
+    ]
+  }
+  mockPath="vehicle"
+/>
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonsContainer should render some people, planet, and vehicles buttons 1`] = `
+<div
+  id="buttons-container"
+>
+  <Button
+    value="people"
+  />
+  <Button
+    value="planets"
+  />
+  <Button
+    value="vehicles"
+  />
+</div>
+`;
