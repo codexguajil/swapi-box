@@ -5,7 +5,6 @@ import { CardsContainer } from './CardsContainer';
 import { ButtonsContainer } from './ButtonsContainer';
 import { fetchFilms, fetchApi, iterateFetch } from '../Methods/apiCalls';
 import { iterateHelper } from '../Methods/helpers';
-// import './App.css';
 import { promises } from 'fs';
 
 class App extends Component {
