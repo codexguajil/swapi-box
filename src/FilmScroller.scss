@@ -1,6 +1,7 @@
 body {
     background-color: hsl(0, 0%, 0%);
     overflow: hidden;
+    height: 1600px;
 }
 
 #film {
@@ -21,7 +22,7 @@ body {
 
 #crawl {
     animation: crawl 60s linear;
-    // background-color: hsl(0, 0%, 0%);
+    animation-fill-mode: forwards;
     position: relative;
     top: -100px;
     transform-origin: 50% 100%;
