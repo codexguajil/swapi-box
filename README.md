@@ -15,6 +15,7 @@ A user wants to learn more about her favorite movie series' characters, universe
 ## Future Enhancements: 
 - Favorites
 - Local Storage
+- Continue to DRY up code
 
 ## Primary Technologies Used:
 - ReactJS 
