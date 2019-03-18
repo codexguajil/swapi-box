@@ -1,7 +1,7 @@
 import React from 'react';
 
+
 export const iterateHelper = async (array, path) => {
-    // console.log(array)
     if (path === 'people') {
         try {
             let objectValues = array.map(item => {
@@ -10,6 +10,7 @@ export const iterateHelper = async (array, path) => {
                         species: item.species[0]
                 }
             })
+
             return await objectValues
         } catch(error) {
             return error.message
