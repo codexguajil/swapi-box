@@ -10,7 +10,7 @@
 - Run npm start and visit localhost:3000 in your browser
 
 ## Background and Information:
-A user wants to learn more about his favorite movie series by using cards with star wars data. She wants to learn more about the characters, the star wars universe, and the transportation tech. By clicking the buttons, she is able to access a star wars database!
+A user wants to learn more about her favorite movie series by using cards with star wars data. She wants to learn more about the characters, the star wars universe, and the transportation tech. By clicking the buttons, she is able to access a star wars database!
 
 ## Future Enhancements: 
 - Favorites
