@@ -27,4 +27,4 @@ Run npm test from the root directory
 
 ## Preview: 
 
-
+![2019-03-17 21 44 18](https://user-images.githubusercontent.com/20582868/54505553-fb352280-48fd-11e9-989d-13bd1fd27ebe.gif)
