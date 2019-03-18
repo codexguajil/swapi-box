@@ -6,9 +6,9 @@ export const ButtonsContainer = (props) => {
     
         return (
             <div id="buttons-container">
-                <Button value="people" fetch={props.fetchPeople}/>
-                <Button value="planets" fetch={props.fetchPeople}/>
-                <Button value="vehicles" fetch={props.fetchPeople}/>
+                <Button value="people" fetch={props.fetchAnything}/>
+                <Button value="planets" fetch={props.fetchAnything}/>
+                <Button value="vehicles" fetch={props.fetchAnything}/>
             </div>
         )
 }

@@ -4,6 +4,7 @@ import { Header } from './Header';
 import { CardsContainer } from './CardsContainer';
 import { ButtonsContainer } from './ButtonsContainer';
 import { fetchFilms, fetchApi, iterateFetch } from '../Methods/apiCalls';
+import { fetchHomeWorlds, fetchSpecies } from '../Methods/people';
 import { iterateHelper } from '../Methods/helpers';
 import { promises } from 'fs';
 
@@ -15,8 +16,6 @@ class App extends Component {
       count: 0,
       data: [],
     }
-    this.fetchPeople = this.fetchPeople.bind(this)
-    this.fetchSpecies = this.fetchSpecies.bind(this)
   }
 
   componentDidMount() {
@@ -33,26 +32,22 @@ class App extends Component {
     }
   }
 
-  async fetchPeople(value) {  
-    console.log(value)
+  fetchAnything = async (value) => {  
     const url = `https://swapi.co/api/${value}`
     try {
       const parsedResponse = await fetchApi(url)
       const objectValues = await iterateHelper(parsedResponse.results, value)
-      console.log('objectVAlues:', objectValues)
       if(objectValues[0].species) {
-        let homeWorlds = await this.fetchHomeWorlds(objectValues)
-        let species = await this.fetchSpecies(objectValues)
+        let homeWorlds = await fetchHomeWorlds(objectValues)
+        let species = await fetchSpecies(objectValues)
         homeWorlds.forEach((person,i) => {
           person.species = species[i].name
           person.language = species[i].language
         })
-        console.log(homeWorlds);
         this.setState({data: homeWorlds})
         } else if(objectValues[0].terrain) {
           let residents = await this.fetchResidents(objectValues)
           let newPlanets = this.resetResidents(objectValues, residents)
-          console.log(newPlanets)
           this.setState({data: newPlanets})
         } else if(objectValues[0].model) {
           this.setState({data: objectValues})
@@ -93,44 +88,12 @@ class App extends Component {
     }
   }
 
-  async fetchHomeWorlds(people) {
-    console.log('people', people)
-    let homes = people.map(person => {
-       return fetchApi(person.home)
-    })
-    let allHomes = await Promise.all(homes)
-    let homeValues = allHomes.map((home,i) => {
-      return {
-        name: people[i].name,
-        Homeworld: home.name,
-        Population: home.population
-      }
-    })
-
-    return homeValues
-  }
-
-  async fetchSpecies(people) {
-    console.log(people)
-    let species = people.map(person => {
-      return fetchApi(person.species)
-    })
-    let allSpecies = await Promise.all(species)
-    let speciesName = allSpecies.map(species => {
-      return {
-        name: species.name,
-        language: species.language
-      }
-    })
-    return speciesName;
-  }
-
   render() {
     const { films, data } = this.state
     return (
       <div className="App">
         <Header />
-        <ButtonsContainer fetchPeople={this.fetchPeople}/>
+        <ButtonsContainer fetchAnything={this.fetchAnything}/>
         <CardsContainer data={data}/>
         <FilmScroller films={films}/>
       </div>
