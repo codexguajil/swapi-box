@@ -4,7 +4,7 @@ export const fetchFilms = async (url) => {
     try {
         const response = await fetch(url)
         const parsedResponse = await response.json()
-        return await parsedResponse.results
+        return parsedResponse
     } catch(error) {
         return error.message
     }

@@ -13,7 +13,6 @@ import { fetchApi } from './apiCalls';
         Population: home.population
       }
     })
-
     return homeValues
   }
 

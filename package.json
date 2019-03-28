@@ -7,13 +7,16 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-redux": "^6.0.1",
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "./node_modules/.bin/eslint src/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,7 +31,6 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.0",
     "enzyme-to-json": "^3.3.5",
-    "eslint": "^5.15.2",
     "eslint-plugin-react": "^7.12.4"
   },
   "jest": {
