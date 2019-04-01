@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import { movies } from './movies';
+import { movie } from './movie';
+import { people } from './people';
+import { clickedButton } from './clickedButton';
 
 export const rootReducer = combineReducers({
-  movies,
+  clickedButton,
+  movie,
+  people,
 })

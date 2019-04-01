@@ -1,42 +1,48 @@
 import React, { Component } from 'react';
 import FilmScroller from '../FilmScroller/FilmScroller';
-import { fetchFilms, fetchApi, iterateFetch } from '../../utils/apiCalls';
+import { fetchAnything } from '../../utils/apiCalls';
 import { connect } from 'react-redux';
-import { addMovies } from '../../actions';
+import { addMovie } from '../../actions';
+import { ButtonsContainer } from '../../Components/ButtonsContainer';
+import { Header } from '../../Components/Header';
+import CardsContainer from '../CardsContainer/CardsContainer';
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount = () => {
-    this.fetchFilms();
+    this.fetchRandomFilm();
   }
   
-  fetchFilms = async () => {
+  fetchRandomFilm = async () => {
     const url = 'https://swapi.co/api/films/';
+    const randomNum = Math.floor(Math.random() * 6);
     try {
-      const films = await fetchFilms(url);
-      this.props.addMovies(films.results);
+      const films = await fetchAnything(url);
+      this.props.addMovie(films.results[randomNum]);
     } catch(error) {
       throw error.message;
     }
   }
 
   render() {
-    const { movies } = this.props
-    console.log(movies)
     return (
         <div className="App">
+          <Header />
           <FilmScroller />
+          <ButtonsContainer />
+          <CardsContainer />
         </div>
     );
   }
 }
 
 export const mapStateToProps = (state) => ({
-  movies: state.movies,
+  movie: state.movie,
+  people: state.people,
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  addMovies: (movies) => dispatch(addMovies(movies))
+  addMovie: (movie) => dispatch(addMovie(movie))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,9 +1,9 @@
-// @import './FilmScroller';
+// @import './containers/FilmScroller/FilmScroller';
 // @import './Header';
 // @import './ButtonsContainer';
-// @import './CardsContainer';
+@import './Components/CardsContainer/CardsContainer';
 // @import './Button';
-// @import './Card';
+@import './Card';
 @import './containers/App/App';
 
 body {

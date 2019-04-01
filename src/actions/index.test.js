@@ -3,13 +3,13 @@ import { mockFilms } from '../utils/mockData';
 
 describe('actions', () => {
   describe('addMovies', () => {
-    it.only('should return a type ADD_MOVIES with the star wars films', () => {
+    it('should return a type ADD_MOVIES with the random film object', () => {
       const expected = {
-        type: 'ADD_MOVIES',
+        type: 'ADD_MOVIE',
         movies: mockFilms
       }
 
-      const result = actions.addMovies(mockFilms)
+      const result = actions.addMovie(mockFilms)
 
       expect(result).toEqual(expected)
     })

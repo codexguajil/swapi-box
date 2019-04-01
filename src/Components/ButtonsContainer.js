@@ -1,18 +1,11 @@
-import React, { Component } from 'react';
-import Button from './Button';
-import propTypes from 'prop-types';
+import React from 'react';
+import PeopleButton from '../containers/PeopleButton/PeopleButton';
 
-export const ButtonsContainer = (props) => {
+export const ButtonsContainer = () => {
     
         return (
             <div id="buttons-container">
-                <Button value="people" fetch={props.fetchAnything}/>
-                <Button value="planets" fetch={props.fetchAnything}/>
-                <Button value="vehicles" fetch={props.fetchAnything}/>
+                <PeopleButton value="People"/>
             </div>
         )
-}
-
-ButtonsContainer.propTypes = {
-    fetchPeople: propTypes.func.isRequired
 }
